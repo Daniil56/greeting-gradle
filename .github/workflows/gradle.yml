@@ -19,7 +19,7 @@ jobs:  # Задачи, которые будут выполняться
           java-version: '21'
           distribution: 'temurin'
 
-      - name: Prepare  # Подготовка Предоставление прав на выполнение скрипту gradlew
+      - name: Prepare  # Подготовка Предоставление прав на выполнение
         run: chmod +x gradlew
 
       - name: Build without tests  # Сборка проекта без тестов
