@@ -8,7 +8,7 @@ on:  # Определяет, когда будет запускаться workfl
 
 jobs:  # Задачи, которые будут выполняться
   build:  # Название задачи
-    runs-on: ubuntu-latest  # На какой ОС будет выполняться (исправил alpine на ubuntu)
+    runs-on: alpine-latest  # На какой ОС будет выполняться (исправил alpine на ubuntu)
 
     steps:  # Шаги выполнения
       - uses: actions/checkout@v3  # Клонирование репозитория
@@ -18,6 +18,9 @@ jobs:  # Задачи, которые будут выполняться
         with:
           java-version: '21'
           distribution: 'temurin'
+
+      - name: Prepare  # Подготовка Предоставление прав на выполнение скрипту gradlew
+        run: chmod +x gradlew
 
       - name: Build without tests  # Сборка проекта без тестов
         run: ./gradlew clean build -x test
