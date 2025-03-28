@@ -8,7 +8,7 @@ on:  # Определяет, когда будет запускаться workfl
 
 jobs:  # Задачи, которые будут выполняться
   build:  # Название задачи
-    runs-on: alpine-latest  # На какой ОС будет выполняться (исправил alpine на ubuntu)
+    runs-on: ubuntu-latest  # На какой ОС будет выполняться (исправил alpine на ubuntu)
 
     steps:  # Шаги выполнения
       - uses: actions/checkout@v3  # Клонирование репозитория
